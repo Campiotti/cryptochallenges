@@ -1,0 +1,24 @@
+name: CI
+
+on: [push]
+
+jobs:
+  lint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Setup Python environment
+      uses: actions/setup-python@v1.1.1
+      with:
+        # Version range or exact version of a Python version to use, using semvers version range syntax.
+        python-version: 3.6 # optional, default is 3.x
+        # The target architecture (x86, x64) of the Python interpreter.
+        architecture: x64 # optional, default is x64
+    - name: requirements-dev.txt
+      run: pip install flake8==3.6 mypy==0.761
+    - name: flake8-dir
+      run: flake8 .
+    - name: mypy-dir
+      run: mypy . --python-version 3.6 --check-untyped-defs --ignore-missing-imports
+      

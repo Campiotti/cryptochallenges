@@ -16,8 +16,8 @@ jobs:
         # The target architecture (x86, x64) of the Python interpreter.
         architecture: x64 # optional, default is x64
     # Check out the repository
-    - uses: actions/checkout@v1
-
+    - uses: actions/checkout@v2
+    # Do the job
     - name: requirements-dev.txt
       run: pip install flake8==3.6 mypy==0.761
     - name: flake8-module
@@ -40,7 +40,8 @@ jobs:
         # The target architecture (x86, x64) of the Python interpreter.
         architecture: x64 # optional, default is x64
     # Check out the repository
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+    # Do the job
     - name: dependencies
       run: pip install -r requirements.txt
     - name: run_tests

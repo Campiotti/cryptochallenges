@@ -17,6 +17,8 @@ jobs:
         architecture: x64 # optional, default is x64
     - name: requirements-dev.txt
       run: pip install flake8==3.6 mypy==0.761
+    - name: debug_123
+      run: echo $PWD && ls -al .
     - name: flake8-module
       run: flake8 cryptochallenge
     - name: mypy-module

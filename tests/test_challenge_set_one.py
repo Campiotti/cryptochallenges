@@ -1,7 +1,7 @@
 import unittest
 
 from cryptochallenge.challenge import set_one as one
-from .test_helper import get_file_as_str, get_str, DIR_PATH
+from .test_helper import get_file_as_str, DIR_PATH
 
 
 class TestChallengeSetOne(unittest.TestCase):
@@ -61,4 +61,3 @@ class TestChallengeSetOne(unittest.TestCase):
         self.assertEqual(expected, output)
 
         print(output)
-

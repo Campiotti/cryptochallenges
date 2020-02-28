@@ -18,7 +18,7 @@ jobs:
     - name: requirements-dev.txt
       run: pip install flake8==3.6 mypy==0.761
     - name: debug_123
-      run: echo $PWD && ls -al .
+      run: echo $PWD && ls -al . && ls -al ../. && ls -al ../../. && echo $0
     - name: flake8-module
       run: flake8 cryptochallenge
     - name: mypy-module

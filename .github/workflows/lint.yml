@@ -15,12 +15,11 @@ jobs:
         python-version: 3.6 # optional, default is 3.x
         # The target architecture (x86, x64) of the Python interpreter.
         architecture: x64 # optional, default is x64
+    # Check out the repository
+    - uses: actions/checkout@v1
+
     - name: requirements-dev.txt
       run: pip install flake8==3.6 mypy==0.761
-    - name: debug_path
-      run: echo $PWD && ls -al . && ls -al ../. && ls -al ../../. && echo $0
-    - name: debug_git
-      run: git status && git checkout . && ls -al .
     - name: flake8-module
       run: flake8 cryptochallenge
     - name: mypy-module
@@ -40,7 +39,9 @@ jobs:
         python-version: 3.6 # optional, default is 3.x
         # The target architecture (x86, x64) of the Python interpreter.
         architecture: x64 # optional, default is x64
-    - name: dependancies
+    # Check out the repository
+    - uses: actions/checkout@v1
+    - name: dependencies
       run: pip install -r requirements.txt
     - name: run_tests
       run: bash bin/run_tests.sh

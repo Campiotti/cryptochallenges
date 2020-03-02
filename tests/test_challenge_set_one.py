@@ -1,6 +1,6 @@
 import unittest
 
-from cryptochallenge.challenge import set_one as one
+from crypto.challenge import set_one as one
 from .test_helper import get_file_as_str, DIR_PATH
 
 

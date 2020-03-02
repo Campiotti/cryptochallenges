@@ -21,9 +21,9 @@ jobs:
     - name: requirements-dev.txt
       run: pip install flake8==3.6 mypy==0.761
     - name: flake8-module
-      run: flake8 cryptochallenge
+      run: flake8 crypto
     - name: mypy-module
-      run: mypy cryptochallenge --python-version 3.6 --check-untyped-defs
+      run: mypy crypto --python-version 3.6 --check-untyped-defs
     - name: flake8-tests
       run: flake8 tests
     - name: mypy-tests
